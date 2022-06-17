@@ -1,4 +1,5 @@
 .App {
+  position: relative;
   text-align: center;
   margin-top: 5rem;
 }
@@ -24,6 +25,10 @@
   justify-content: center;
   align-items: center;
   gap: 1rem;
+}
+
+.App li {
+  list-style-type: none;
 }
 
 .movie-container {
@@ -68,4 +73,26 @@
 .search-button {
   height: 100%;
   width: 6rem;
+}
+
+.showtimes-container {
+  /* display: inherit; */
+  position: absolute;
+  z-index: 3;
+  margin-left: auto;
+  margin-right: auto;
+  top: 5rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+  height: 40rem;
+  width: 50rem;
+  border: 2px solid rgb(0, 0, 0);
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.cinemas-showing-film {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
 }

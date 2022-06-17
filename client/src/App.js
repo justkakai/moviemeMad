@@ -8,15 +8,17 @@ function App() {
   const [results, setResults] = useState([]);
   const [imdbId, setImdbId] = useState("");
   const [movieTitle, setMovieTitle] = useState(null);
+  const [showtimeResults, setShowtimeResults] = useState([]);
 
   useEffect(() => {
     axios.get(`/api/movieDetails/${movieTitle}`)
       .then(movie => {
-        console.log(movie.data.films[0].film_id);
-        console.log(movie.data.films[0].imdb_title_id);
+        console.log("movieTitle - filmId", movie.data.films[0].film_id);
+        console.log("movieTitle - imdbId", movie.data.films[0].imdb_title_id);
         if (movie.data.films[0].imdb_title_id === imdbId) {
           axios.get(`/api/movieShowtimes?filmId=${movie.data.films[0].film_id}&date=2022-06-17`)
             .then(movie => {
+              setShowtimeResults(movie.data.cinemas);
               console.log(movie.data.cinemas);
             })
         }
@@ -28,19 +30,19 @@ function App() {
   const handleInput = () => {
     axios.get(`/api/getMovies/${searchWord}`)
       .then(movies => {
-        console.log(movies.data)
+        console.log("searchword", movies.data)
         setResults(movies.data.Search)
       })
       .catch(error => console.log(error))
   }
 
   const handleClick = (id, title) => {
-    console.log(id);
+    console.log("id", id);
     setImdbId(id);
     setMovieTitle(title);
     axios.get(`/api/getById/${id}`)
       .then(movie => {
-        console.log(movie.data)
+        console.log("getById", movie.data)
       })
       .catch(error => console.log(error))
 
@@ -63,6 +65,20 @@ function App() {
       <div className='search-section'>
         <input className='search-box' type="text" onChange={(e) => setSearchWord(e.target.value)} value={searchWord} />
         <button className='search-button' type="button" onClick={handleInput}>Search</button>
+      </div>
+      <div className='showtimes-container'>
+        <ul className='cinemas-showing-film'>
+          {showtimeResults.map((cinema) => (
+            <li key={cinema.cinema_id}>
+              <h3>{cinema.cinema_name}</h3>
+              <ul>
+                {cinema.showings.Standard.times.map((time, index) => (
+                  <li key={index}>{time.start_time}</li>
+                ))}
+              </ul>
+            </li>
+          ))}
+        </ul>
       </div>
       <ul>
         {results.map((movie, index) => (
