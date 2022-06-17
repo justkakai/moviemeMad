@@ -63,7 +63,7 @@ function App() {
               setModalActive(true);
               setShowtimeResults(movie.data.cinemas);
               console.log(movie.data.cinemas);
-              console.log(movie.data);
+              // console.log(movie.data);
             })
         } else {
           setShowtimeResults([]);
