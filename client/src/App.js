@@ -74,13 +74,13 @@ function App() {
       <div
         className='showtimes-container'
         style={modalActive ?
-          { display: "flex" } : { display: "none" }}>
+          { transition: "height 1s"} : { height: "0", width: "0", padding: "0" }}>
         <button
           className='x-button'
           onClick={() => { setModalActive(false); setImdbId("") }}>
           <img src={xImage} alt="x within button to close modal" />
         </button>
-        <h2>{movieTitle}</h2>
+        <h2>Showtimes for <em>{movieTitle}</em></h2>
 
         <ul className='cinemas-showing-film'>
           {showtimeResults.map((cinema) => (
