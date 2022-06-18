@@ -1,5 +1,6 @@
 import axios from 'axios';
 import xImage from '../assets/images/x-image-3.png';
+import blackBg from "../assets/images/black-background.png";
 import { HiOutlinePlus } from "react-icons/hi";
 import { useEffect, useContext } from 'react';
 import { ModalActiveContext } from '../contexts/ModalActiveContext';
@@ -25,7 +26,7 @@ function MovieDetails() {
                 console.log("this is the current film that's been clicked on", movie.data.films[0].film_name);
                 console.log("mmmmm", movie.data);
                 if (movie.data.films[0].imdb_title_id === imdbId) {
-                    axios.get(`/api/movieShowtimes?filmId=${movie.data.films[0].film_id}&date=2022-06-18`)
+                    axios.get(`/api/movieShowtimes?filmId=${movie.data.films[0].film_id}&date=2022-06-20`)
                         .then(movie => {
                             setModalActive(true);
                             setShowtimeResults(movie.data.cinemas);
@@ -42,16 +43,19 @@ function MovieDetails() {
 
     return (
         <section
-            className='movie-details-container' style={modalActive ? { transition: "height 1s" } : { height: "0", width: "0", padding: "0" }}>
+            className='movie-details-container' style={modalActive ? { transition: "height 1s" } : { height: "0", padding: "0", opacity: "0" }}>
+
             <button
                 className='x-button'
                 onClick={() => { setModalActive(false); setImdbId("") }}>
                 <img src={xImage} alt="x within button to close modal" />
             </button>
+
             <h2>{movieTitle}</h2>
+
             <div className='movie-details'>
                 <div className='movie-details-left'>
-                    <img src={movieDetails.Poster} alt={`Poster for the movie ${movieDetails.Title}`} />
+                    <img src={movieDetails.Poster} alt={`Poster for the movie ${movieDetails.Title}`} onError={(e) => e.target.src=blackBg} />
                 </div>
                 <div className='movie-details-right'>
                     <p>Release Year: {movieDetails.Year}</p>
@@ -67,6 +71,7 @@ function MovieDetails() {
             </div>
 
             <h3>Screenings in Berlin</h3>
+
             {showtimeResults ?
                 <ul className='cinemas-showing-film'>
                     {showtimeResults.map((cinema) => (
@@ -81,10 +86,8 @@ function MovieDetails() {
                     ))}
                 </ul>
                 :
-                <p className='no-screenings'>Sorry, there are currently no screenings for this movie :(</p>
+                <p className='no-screenings'>Sorry, there are currently no screenings for this film in Berlin</p>
             }
-
-
         </section>
     )
 }

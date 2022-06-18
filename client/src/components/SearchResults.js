@@ -30,16 +30,12 @@ function SearchResults() {
             .catch(error => console.log(error.message))
     }
 
-    const handleBrokenImg = (image) => {
-        image.src = blackBg;
-    }
-
     return (
         <ul className='search-results-ul'>
             {results.map((movie, index) => (
                 <li key={index} className="search-results-movie" onClick={() => handleClick(movie.imdbID, movie.Title)}>
                     <div className='movie-container'>
-                        <div className='image-container'><img onError={(e) => handleBrokenImg(e.target)} alt={movie.Title} src={movie.Poster} /></div>
+                        <div className='image-container'><img onError={(e) => e.target.src = blackBg} alt={movie.Title} src={movie.Poster} /></div>
                         <p className='movie-title'>{movie.Title}</p>
                         <div className='movie-extra-info'>
                             <p className='result-type'>{movie.Type}!</p>
