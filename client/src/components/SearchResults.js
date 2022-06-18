@@ -4,6 +4,7 @@ import { useContext } from 'react';
 import { SearchResultsContext } from '../contexts/SearchResultsContext';
 import { ImdbIdContext } from '../contexts/ImdbIdContext';
 import { MovieTitleContext } from '../contexts/MovieTitleContext';
+import '../styles/SearchResults.css';
 
 function SearchResults() {
 

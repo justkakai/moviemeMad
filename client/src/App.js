@@ -1,4 +1,3 @@
-import './App.css';
 import MovieDetails from './components/MovieDetailsContainer';
 import SearchResults from './components/SearchResults';
 import SearchSection from './components/SearchSection';
@@ -8,6 +7,7 @@ import { SearchResultsProvider } from './contexts/SearchResultsContext';
 import { ImdbIdProvider } from './contexts/ImdbIdContext';
 import { MovieTitleProvider } from './contexts/MovieTitleContext';
 import { ShowtimesProvider } from './contexts/ShowtimesContext';
+import './App.css';
 
 function App() {
 

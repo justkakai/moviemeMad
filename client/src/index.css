@@ -1,18 +1,58 @@
+:root {
+  /* general colors */
+  --body-bg-color: rgb(225, 195, 228);
+  --scrollbar-primary-color: rgb(0, 0, 0);
+  --scrollbar-secondary-color: var(--body-bg-color);
+
+  /* search section colors */
+  --search-button-bg-color: rgb(32, 32, 32);
+  --search-button-text-color: rgb(255, 255, 255);
+
+  /* search results section colors */
+  --movie-container-bg-color: rgb(32, 32, 32);
+  --movie-container-box-shadow-color: rgb(245, 245, 245);
+  --movie-title-text-color: rgb(255, 255, 255);
+  --result-type-text-color: rgb(255, 255, 255);
+  --release-year-text-color: rgb(245, 222, 179);
+
+  /* movie details section colors */
+  --h2-text-color: rgb(245, 245, 245);
+  --h3-text-color: rgb(245, 245, 245);
+  --movie-details-container-bg-color: rgba(147, 122, 150, 0.93);
+  --x-button-border-color: rgb(49, 49, 49);
+  --x-button-bg-color: rgb(209, 181, 209);
+  --showtimes-button-bg-color: rgb(22, 22, 22);
+  --showtimes-button-text-color: rgb(255, 255, 255);
+
+  /* fonts */
+  --main-font: "PPEditorial-New-Regular", sans-serif;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   user-select: none;
-  font-family: 'main-font', sans-serif;
-  background-color: rgb(225, 195, 228);
+  font-family: var(--main-font);
+  background-color: var(--body-bg-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: "PPEditorial-New-Regular";
+  /* src: url("./fonts/PPNeueMontreal-Book.otf"); */
+  src: url("./fonts/PPEditorialNew-Regular.otf");
 }
+
+/* @font-face {
+  font-family: "h1-font";
+  src: url("./fonts/PPEditorialNew-Regular.otf");
+} */

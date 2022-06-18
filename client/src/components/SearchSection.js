@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import { ModalActiveContext } from '../contexts/ModalActiveContext';
 import { SearchResultsContext } from '../contexts/SearchResultsContext';
 import { SearchWordContext } from '../contexts/SearchWordContext';
+import '../styles/SearchSection.css';
 
 function SearchSection() {
 

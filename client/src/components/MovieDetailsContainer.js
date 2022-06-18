@@ -5,6 +5,7 @@ import { ModalActiveContext } from '../contexts/ModalActiveContext';
 import { MovieTitleContext } from '../contexts/MovieTitleContext';
 import { ImdbIdContext } from '../contexts/ImdbIdContext';
 import { ShowtimesContext } from '../contexts/ShowtimesContext';
+import '../styles/MovieDetails.css';
 
 function MovieDetails() {
 
