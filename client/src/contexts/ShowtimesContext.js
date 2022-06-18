@@ -4,7 +4,7 @@ const ShowtimesContext = createContext(null);
 
 function ShowtimesProvider({ children }) {
 
-    const [showtimeResults, setShowtimeResults] = useState([]);
+    const [showtimeResults, setShowtimeResults] = useState(null);
 
     return (
         <ShowtimesContext.Provider value={{ showtimeResults, setShowtimeResults }}>

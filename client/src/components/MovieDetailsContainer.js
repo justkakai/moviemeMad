@@ -34,7 +34,6 @@ function MovieDetails() {
                 }
             })
             .catch(error => {
-                // setModalActive(false);
                 setShowtimeResults(null);
                 console.log(error.message, "Oops! Looks like we don't have a movie title :(");
             })

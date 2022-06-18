@@ -6,6 +6,7 @@ import { ImdbIdContext } from '../contexts/ImdbIdContext';
 import { MovieTitleContext } from '../contexts/MovieTitleContext';
 import { MovieDetailsContext } from '../contexts/MovieDetailsContext';
 import '../styles/SearchResults.css';
+import { ModalActiveContext } from '../contexts/ModalActiveContext';
 
 function SearchResults() {
 
@@ -13,6 +14,7 @@ function SearchResults() {
     const { setMovieTitle } = useContext(MovieTitleContext);
     const { results } = useContext(SearchResultsContext);
     const { setMovieDetails } = useContext(MovieDetailsContext);
+    const { setModalActive } = useContext(ModalActiveContext);
 
     const handleClick = (id, title) => {
         console.log("id", id);
@@ -21,6 +23,7 @@ function SearchResults() {
             .then((movie) => {
                 setImdbId(id);
                 setMovieTitle(title);
+                setModalActive(true);
                 setMovieDetails(movie.data)
                 console.log("getById", movie.data)
             })
