@@ -25,7 +25,7 @@ app.get("/api/getMovies/:searchTerm", (req, res) => {
 })
 
 app.get("/api/getById/:id", (req, res) => {
-    axios.get(`https://www.omdbapi.com/?apikey=7d212626&i=${req.params.id}&plot=full`)
+    axios.get(`https://www.omdbapi.com/?apikey=7d212626&i=${req.params.id}`)
         .then(movie => res.json(movie.data))
 })
 

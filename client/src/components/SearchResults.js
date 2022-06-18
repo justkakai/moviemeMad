@@ -1,16 +1,18 @@
 import axios from 'axios';
-import blackBg from "../assets/black-background.png";
+import blackBg from "../assets/images/black-background.png";
 import { useContext } from 'react';
 import { SearchResultsContext } from '../contexts/SearchResultsContext';
 import { ImdbIdContext } from '../contexts/ImdbIdContext';
 import { MovieTitleContext } from '../contexts/MovieTitleContext';
+import { MovieDetailsContext } from '../contexts/MovieDetailsContext';
 import '../styles/SearchResults.css';
 
 function SearchResults() {
 
     const { setImdbId } = useContext(ImdbIdContext);
-    const {setMovieTitle} = useContext(MovieTitleContext);
-    const { results } = useContext(SearchResultsContext)
+    const { setMovieTitle } = useContext(MovieTitleContext);
+    const { results } = useContext(SearchResultsContext);
+    const { setMovieDetails } = useContext(MovieDetailsContext);
 
     const handleClick = (id, title) => {
         console.log("id", id);
@@ -19,6 +21,7 @@ function SearchResults() {
             .then((movie) => {
                 setImdbId(id);
                 setMovieTitle(title);
+                setMovieDetails(movie.data)
                 console.log("getById", movie.data)
             })
             .catch(error => console.log(error.message))

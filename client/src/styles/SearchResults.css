@@ -12,7 +12,7 @@
     align-items: center;
     border-radius: 2px;
     background-color: var(--movie-container-bg-color);
-    border-radius: 2px;
+    border-radius: 3px;
     box-shadow: 5px 5px 1px var(--movie-container-box-shadow-color);
 }
 

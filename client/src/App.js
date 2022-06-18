@@ -7,6 +7,7 @@ import { SearchResultsProvider } from './contexts/SearchResultsContext';
 import { ImdbIdProvider } from './contexts/ImdbIdContext';
 import { MovieTitleProvider } from './contexts/MovieTitleContext';
 import { ShowtimesProvider } from './contexts/ShowtimesContext';
+import { MovieDetailsProvider } from './contexts/MovieDetailsContext';
 import './App.css';
 
 function App() {
@@ -14,20 +15,22 @@ function App() {
   return (
     <ModalActiveProvider>
       <ShowtimesProvider>
-        <ImdbIdProvider>
-          <MovieTitleProvider>
-            <SearchResultsProvider>
-              <SearchWordProvider>
-                <main className="App">
-                  <h1>movieme<em>Mad!</em></h1>
-                  <SearchSection />
-                  <SearchResults />
-                  <MovieDetails />
-                </main>
-              </SearchWordProvider>
-            </SearchResultsProvider>
-          </MovieTitleProvider>
-        </ImdbIdProvider>
+        <MovieDetailsProvider>
+          <ImdbIdProvider>
+            <MovieTitleProvider>
+              <SearchResultsProvider>
+                <SearchWordProvider>
+                  <main className="App">
+                    <h1>movieme<em>Mad!</em></h1>
+                    <SearchSection />
+                    <SearchResults />
+                    <MovieDetails />
+                  </main>
+                </SearchWordProvider>
+              </SearchResultsProvider>
+            </MovieTitleProvider>
+          </ImdbIdProvider>
+        </MovieDetailsProvider>
       </ShowtimesProvider>
     </ModalActiveProvider>
   );

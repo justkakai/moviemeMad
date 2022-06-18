@@ -18,14 +18,14 @@
   /* movie details section colors */
   --h2-text-color: rgb(245, 245, 245);
   --h3-text-color: rgb(245, 245, 245);
-  --movie-details-container-bg-color: rgba(147, 122, 150, 0.93);
+  --movie-details-container-bg-color: rgba(0, 0, 0, 1);
   --x-button-border-color: rgb(49, 49, 49);
   --x-button-bg-color: rgb(209, 181, 209);
-  --showtimes-button-bg-color: rgb(22, 22, 22);
-  --showtimes-button-text-color: rgb(255, 255, 255);
+  --showtimes-button-bg-color: rgb(223, 223, 223);
+  --showtimes-button-text-color: rgb(22, 22, 22);
 
   /* fonts */
-  --main-font: "PPEditorial-New-Regular", sans-serif;
+  --main-font: "PP-Editorial-New-Regular", sans-serif;
 }
 
 * {
@@ -47,9 +47,9 @@ body {
 }
 
 @font-face {
-  font-family: "PPEditorial-New-Regular";
+  font-family: "PP-Editorial-New-Regular";
   /* src: url("./fonts/PPNeueMontreal-Book.otf"); */
-  src: url("./fonts/PPEditorialNew-Regular.otf");
+  src: url("./assets/fonts/PPEditorialNew-Regular.otf");
 }
 
 /* @font-face {
