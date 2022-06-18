@@ -1,5 +1,6 @@
 import axios from 'axios';
 import xImage from '../assets/images/x-image-3.png';
+import { HiOutlinePlus } from "react-icons/hi";
 import { useEffect, useContext } from 'react';
 import { ModalActiveContext } from '../contexts/ModalActiveContext';
 import { MovieTitleContext } from '../contexts/MovieTitleContext';
@@ -33,7 +34,8 @@ function MovieDetails() {
                 }
             })
             .catch(error => {
-                setModalActive(false);
+                // setModalActive(false);
+                setShowtimeResults(null);
                 console.log(error.message, "Oops! Looks like we don't have a movie title :(");
             })
         // eslint-disable-next-line
@@ -60,25 +62,29 @@ function MovieDetails() {
                     <p>{movieDetails.Plot}</p>
                     <div className='trailer-and-watchlist'>
                         <a href="#/">Watch Trailer</a>
-                        <button>Add to Watchlist</button>
+                        <button><HiOutlinePlus />Add to Watchlist</button>
                     </div>
                 </div>
             </div>
 
             <h3>Screenings in Berlin</h3>
+            {showtimeResults ?
+                <ul className='cinemas-showing-film'>
+                    {showtimeResults.map((cinema) => (
+                        <li key={cinema.cinema_id} className="individual-cinema">
+                            <h4>{cinema.cinema_name}</h4>
+                            <ul className='screening-times'>
+                                {cinema.showings.Standard.times.map((time, index) => (
+                                    <li key={index}><button className='showtimes-button'>{time.start_time}</button></li>
+                                ))}
+                            </ul>
+                        </li>
+                    ))}
+                </ul>
+                :
+                <p className='no-screenings'>Sorry, there are currently no screenings for this movie :(</p>
+            }
 
-            <ul className='cinemas-showing-film'>
-                {showtimeResults.map((cinema) => (
-                    <li key={cinema.cinema_id} className="individual-cinema">
-                        <h4>{cinema.cinema_name}</h4>
-                        <ul className='screening-times'>
-                            {cinema.showings.Standard.times.map((time, index) => (
-                                <li key={index}><button className='showtimes-button'>{time.start_time}</button></li>
-                            ))}
-                        </ul>
-                    </li>
-                ))}
-            </ul>
 
         </section>
     )
