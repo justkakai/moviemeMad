@@ -15,15 +15,6 @@
   padding: 0;
 }
 
-body {
-  font-family: 'main-font', sans-serif;
-  background-color: rgb(225, 195, 228);
-  /* background: url('./assets/gradientBg-1.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center; */
-}
-
 .App {
   position: relative;
   text-align: center;
@@ -191,7 +182,7 @@ h3 {
   border: none;
 }
 
-.showtimes-container {
+.movie-details-container {
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -207,7 +198,7 @@ h3 {
   width: 50%;
   min-width: 25rem;
   /* border: 5px solid rgb(147, 122, 150, 0.9); */
-  background-color: rgba(147, 122, 150, 0.9);
+  background-color: rgba(147, 122, 150, 0.93);
   overflow-y: auto;
   padding: 0 1rem 2rem 5rem;
   transition: height 0.9s, width 1s;
@@ -225,7 +216,7 @@ h3 {
   align-self: flex-end;
   margin: 0.5em 0.5em 0 0;
   padding: 0.6em;
-  border-radius: 50%;
+  border-radius: 45%;
   border: 1px solid rgb(49, 49, 49);
   background-color: rgb(209, 181, 209);
 }
