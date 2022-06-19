@@ -58,14 +58,15 @@ function MovieDetails() {
                 <img src={xImage} alt="x within button to close modal" />
             </button>
 
-            <h2>{movieTitle}</h2>
+            <h2>{`${movieTitle} (${movieDetails.Year})`}</h2>
             <div className='movie-details'>
                 <div className='movie-details-left'>
                     <img src={movieDetails.Poster} alt={`Poster for the movie ${movieDetails.Title}`} onError={(e) => e.target.src = blackBg} />
                 </div>
                 <div className='movie-details-right'>
-                    <p>Release Year: {movieDetails.Year}</p>
                     <p>Runtime: {movieDetails.Runtime}</p>
+                    <p>Director: {movieDetails.Director}</p>
+                    <p>Starring: {movieDetails.Actors}</p>
                     <p>Genre: {movieDetails.Genre}</p>
                     <p>Rating: {movieDetails.Rated}</p>
                     <p>{movieDetails.Plot}</p>

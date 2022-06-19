@@ -51,12 +51,12 @@ h1 {
   height: 11em;
   border: 2px solid var(--body-bg-color);
   border-radius: 50%;
-  background: #ffffff;
-  background: -moz-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
-  background: -webkit-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
-  background: -o-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
-  background: -ms-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
-  background: linear-gradient(to right, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+  background: var(--spinner-primary-color);
+  background: -moz-linear-gradient(left, var(--spinner-primary-color) 10%, var(--spinner-secondary-color) 42%);
+  background: -webkit-linear-gradient(left, var(--spinner-primary-color) 10%, var(--spinner-secondary-color) 42%);
+  background: -o-linear-gradient(left, var(--spinner-primary-color) 10%, var(--spinner-secondary-color) 42%);
+  background: -ms-linear-gradient(left, var(--spinner-primary-color) 10%, var(--spinner-secondary-color) 42%);
+  background: linear-gradient(to right, var(--spinner-primary-color) 10%, var(--spinner-secondary-color) 42%);
   position: relative;
   -webkit-animation: load3 1.4s infinite linear;
   animation: load3 1.4s infinite linear;
@@ -68,7 +68,7 @@ h1 {
 .loader:before {
   width: 50%;
   height: 50%;
-  background: #ffffff;
+  background: var(--spinner-primary-color);
   border-radius: 100% 0 0 0;
   position: absolute;
   top: 0;

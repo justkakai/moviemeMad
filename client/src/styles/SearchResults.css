@@ -67,7 +67,7 @@
 
 .movie-release-year {
     width: 20%;
-    background-color: rgb(0, 0, 0);
+    background-color: var(--release-year-bg-color);
     color: var(--release-year-text-color);
 }
 
@@ -81,7 +81,7 @@
 }
 
 .no-matching-results img {
-    height: 30em;
+    height: 20em;
 }
 
 /********************KEYFRAMES*********************/

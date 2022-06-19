@@ -1,8 +1,11 @@
 :root {
   /* general colors */
+  --black: rgb(0, 0, 0);
   --body-bg-color: rgb(225, 195, 228);
-  --scrollbar-primary-color: rgb(0, 0, 0);
+  --scrollbar-primary-color: var(--black);
   --scrollbar-secondary-color: var(--body-bg-color);
+  --spinner-primary-color: rgb(255, 255, 255);
+  --spinner-secondary-color: rgba(255, 255, 255, 0);
 
   /* search section colors */
   --search-button-bg-color: rgb(32, 32, 32);
@@ -14,6 +17,7 @@
   --movie-title-text-color: rgb(255, 255, 255);
   --result-type-text-color: rgb(255, 255, 255);
   --release-year-text-color: rgb(245, 222, 179);
+  --release-year-bg-color: var(--black);
 
   /* movie details section colors */
   --h2-text-color: rgb(245, 245, 245);
@@ -22,7 +26,7 @@
   --movie-details-left-border-color: rgb(218, 218, 218);
   --movie-details-right-bg-color: none;
   --movie-details-right-p-color: rgb(245, 245, 245);
-  --movie-details-right-a-text-color: rgb(0, 0, 0);
+  --movie-details-right-a-text-color: var(--black);
   --movie-details-right-a-bg-color: rgb(245, 245, 245);
   --movie-details-right-button-bg-color: rgb(173, 173, 173);
   --x-button-border-color: rgb(49, 49, 49);

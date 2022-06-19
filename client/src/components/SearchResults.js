@@ -51,6 +51,7 @@ function SearchResults() {
                 </ul>
                 :
                 <div className='no-matching-results'>
+                    <p>moviemeSad!</p>
                     <p>We don't seem to have any matching results in our database</p>
                     <img onError={(e) => e.target.src = blackBg} alt="No movies found" src={sadFace} />
                 </div>
