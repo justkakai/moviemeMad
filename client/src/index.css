@@ -18,9 +18,9 @@
   /* movie details section colors */
   --h2-text-color: rgb(245, 245, 245);
   --h3-text-color: rgb(245, 245, 245);
-  --movie-details-container-bg-color: rgba(0, 0, 0, 1);
+  --movie-details-container-bg-color: rgb(24, 24, 24);
   --movie-details-left-border-color: rgb(218, 218, 218);
-  --movie-details-right-bg-color: rgba(0, 0, 0, 0.8);
+  --movie-details-right-bg-color: none;
   --movie-details-right-p-color: rgb(245, 245, 245);
   --movie-details-right-a-text-color: rgb(0, 0, 0);
   --movie-details-right-a-bg-color: rgb(245, 245, 245);

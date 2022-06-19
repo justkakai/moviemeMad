@@ -35,7 +35,7 @@ function SearchSection() {
     return (
         <section className='search-section'>
             <div className='search-container'>
-                <input className='search-box' type="text" spellCheck="false" onChange={(e) => setSearchWord(e.target.value)} value={searchWord} onKeyDown={(e) => { handleKeyDown(e) }} />
+                <input className='search-box' type="text" placeholder='Search here!' spellCheck="false" onChange={(e) => setSearchWord(e.target.value)} value={searchWord} onKeyDown={(e) => { handleKeyDown(e) }} />
                 <button className='search-button' type="button" onClick={handleInput}>Search</button>
             </div>
             <div className='loader' style={isLoading ? { display: "inherit" } : { display: "none" }}></div>

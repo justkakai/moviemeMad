@@ -14,8 +14,8 @@
 
 h1 {
   font-family: var(--main-font);
-  font-size: 3.5rem;
-  margin-bottom: 2rem;
+  font-size: 3.5em;
+  margin: 0 auto 2rem auto;
 }
 
 .search-results-ul,
@@ -23,6 +23,10 @@ h1 {
 .screening-times {
   display: flex;
   flex-wrap: wrap;
+}
+
+::placeholder {
+  font-style: italic;
 }
 
 ::-webkit-scrollbar {
@@ -60,6 +64,7 @@ h1 {
   -ms-transform: translateZ(0);
   transform: translateZ(0);
 }
+
 .loader:before {
   width: 50%;
   height: 50%;
@@ -70,6 +75,7 @@ h1 {
   left: 0;
   content: '';
 }
+
 .loader:after {
   background: var(--body-bg-color);
   width: 75%;
@@ -83,23 +89,43 @@ h1 {
   bottom: 0;
   right: 0;
 }
+
+/**************************** KEYFRAMES ****************************/
+
 @-webkit-keyframes load3 {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
+
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
+
 @keyframes load3 {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
+
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
+  }
+}
+
+/**************************** MEDIA QUERIES ****************************/
+
+@media (max-width: 600px) {
+  .App {
+    padding: 2.5rem 0 2rem 0;
+  }
+
+  h1 {
+    margin-right: auto;
+    margin-bottom: 3rem;
+    font-size: 3rem;
   }
 }

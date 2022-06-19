@@ -1,11 +1,12 @@
-h2, h3, h4 {
+h2,
+h3,
+h4 {
     color: var(--h2-text-color);
 }
 
 h2 {
     font-size: 2.5rem;
     align-self: flex-start;
-    /* width: 90%; */
     text-align: left;
 }
 
@@ -16,28 +17,6 @@ h3 {
     margin: 0 auto;
 }
 
-/* .movie-details-container {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    position: absolute;
-    z-index: 3;
-    margin-left: auto;
-    margin-right: auto;
-    top: 17rem;
-    left: 0;
-    right: 0;
-    text-align: center;
-    height: 40rem;
-    width: 50%;
-    min-width: 25rem;
-    background-color: var(--movie-details-container-bg-color);
-    overflow-y: auto;
-    padding: 0 1rem 2rem 5rem;
-    opacity: 1;
-    transition: height 1.1s, padding 1s, opacity 1s;
-} */
-
 .movie-details-container {
     position: relative;
     display: flex;
@@ -47,12 +26,12 @@ h3 {
     z-index: 3;
     margin-left: -100px;
     margin-top: -100px;
-    margin-right: auto;
+    /* margin-right: auto; */
     top: 38%;
     left: 30%;
-    height: 40rem;
+    height: 65%;
     width: 50%;
-    min-width: 25rem;
+    min-width: 22rem;
     border-radius: 3px;
     scroll-behavior: smooth;
     background-color: var(--movie-details-container-bg-color);
@@ -87,12 +66,8 @@ h3 {
     border-bottom: 2px solid var(--body-bg-color);
 }
 
-.movie-details-left, .movie-details-right {
-    height: 25em;
-}
-
 .movie-details-left {
-    width: 40%;
+    width: 35%;
     border: 2px solid var(--movie-details-left-border-color);
 }
 
@@ -105,7 +80,7 @@ h3 {
 
 .movie-details-right {
     padding: 1rem 2rem 0 2rem;
-    width: 60%;
+    width: 65%;
     background-color: var(--movie-details-right-bg-color);
     display: flex;
     flex-direction: column;
@@ -117,7 +92,7 @@ h3 {
 .movie-details-right p {
     color: var(--movie-details-right-p-color);
     text-align: left;
-    line-height: 1.5rem;
+    line-height: 1.6rem;
     font-size: 1.1em;
 }
 
@@ -127,7 +102,12 @@ h3 {
     gap: 1rem;
 }
 
-.trailer-and-watchlist a, .trailer-and-watchlist button {
+.trailer-and-watchlist a,
+.trailer-and-watchlist button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2em;
     padding: 0.7rem 3rem;
     font-size: 1.1em;
     border-radius: 1px;
@@ -149,15 +129,15 @@ h3 {
     margin: 2rem auto 0 auto;
     display: flex;
     flex-direction: column;
-    align-self: flex-start;
-    align-items: flex-start;
+    align-self: center;
+    align-items: center;
     gap: 4rem;
 }
 
 .individual-cinema {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     gap: 2rem;
 }
@@ -180,4 +160,47 @@ h3 {
     color: var(--no-screenings-text-color);
     margin-bottom: 5rem;
     font-size: 1.1em;
+}
+
+/**************************** MEDIA QUERIES ****************************/
+
+@media (max-width: 1515px) {
+
+    .trailer-and-watchlist a,
+    .trailer-and-watchlist button {
+        padding: 0.7rem 1rem;
+    }
+
+    .movie-details-container {
+        margin: 0 auto;
+        top: 32%;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 0 2rem;
+    }
+
+    .movie-details {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .movie-details-right {
+        font-size: 1.2em;
+        width: 100%;
+        align-items: center;
+    }
+
+    .movie-details-right p {
+        text-align: center;
+    }
+
+    .movie-details-left {
+        margin-bottom: 2rem;
+    }
+
+    h2 {
+        align-self: center;
+        text-align: center;
+    }
 }
