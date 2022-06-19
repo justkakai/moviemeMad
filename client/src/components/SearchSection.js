@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useContext } from 'react';
+import { IsLoadingContext } from '../contexts/IsLoadingContext';
 import { ModalActiveContext } from '../contexts/ModalActiveContext';
 import { SearchResultsContext } from '../contexts/SearchResultsContext';
 import { SearchWordContext } from '../contexts/SearchWordContext';
@@ -9,15 +10,18 @@ function SearchSection() {
 
     const { searchWord, setSearchWord } = useContext(SearchWordContext);
     const { setModalActive } = useContext(ModalActiveContext);
-    const { setResults } = useContext(SearchResultsContext)
+    const { setResults } = useContext(SearchResultsContext);
+    const { isLoading, setIsLoading } = useContext(IsLoadingContext);
 
     const handleInput = () => {
         setModalActive(false);
-        axios.get(`/api/getMovies/${searchWord}`)
+        setIsLoading(true);
+        axios.get(`/api/getMovies/${searchWord.trim()}`)
             .then(movies => {
                 console.log("searchword", movies.data)
                 console.log("searching", movies.data.Search);
                 setResults(movies.data.Search)
+                setIsLoading(false);
             })
             .catch(error => console.log(error.message))
     }
@@ -30,8 +34,11 @@ function SearchSection() {
 
     return (
         <section className='search-section'>
-            <input className='search-box' type="text" spellCheck="false" onChange={(e) => setSearchWord(e.target.value.trim())} value={searchWord} onKeyDown={(e) => { handleKeyDown(e) }} />
-            <button className='search-button' type="button" onClick={handleInput}>Search</button>
+            <div className='search-container'>
+                <input className='search-box' type="text" spellCheck="false" onChange={(e) => setSearchWord(e.target.value)} value={searchWord} onKeyDown={(e) => { handleKeyDown(e) }} />
+                <button className='search-button' type="button" onClick={handleInput}>Search</button>
+            </div>
+            <div className='loader' style={isLoading ? { display: "inherit" } : { display: "none" }}></div>
         </section>
     )
 }

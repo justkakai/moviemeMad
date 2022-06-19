@@ -8,6 +8,7 @@ import { MovieTitleContext } from '../contexts/MovieTitleContext';
 import { ImdbIdContext } from '../contexts/ImdbIdContext';
 import { ShowtimesContext } from '../contexts/ShowtimesContext';
 import { MovieDetailsContext } from '../contexts/MovieDetailsContext';
+// import { IsLoadingContext } from '../contexts/IsLoadingContext';
 import '../styles/MovieDetails.css';
 
 function MovieDetails() {
@@ -19,6 +20,7 @@ function MovieDetails() {
     const { imdbId, setImdbId } = useContext(ImdbIdContext);
     const { movieDetails } = useContext(MovieDetailsContext);
     const { showtimeResults, setShowtimeResults } = useContext(ShowtimesContext);
+    // const { isLoading, setIsLoading } = useContext(IsLoadingContext);
 
     useEffect(() => {
         scrollRef.current.scrollTo(0, 0);
@@ -28,10 +30,12 @@ function MovieDetails() {
                 console.log("movieTitle - imdbId", movie.data.films[0].imdb_title_id);
                 console.log("this is the current film that's been clicked on", movie.data.films[0].film_name);
                 console.log("mmmmm", movie.data);
+                // setIsLoading(true);
                 if (movie.data.films[0].imdb_title_id === imdbId) {
+                    setModalActive(true);
                     axios.get(`/api/movieShowtimes?filmId=${movie.data.films[0].film_id}&date=2022-06-20`)
                         .then(movie => {
-                            setModalActive(true);
+                            // setIsLoading(false);
                             setShowtimeResults(movie.data.cinemas);
                             console.log(movie.data.cinemas);
                         })
@@ -73,6 +77,7 @@ function MovieDetails() {
             </div>
 
             <h3>Screenings in Berlin</h3>
+            {/* <div className='loader' style={isLoading ? { display: "inherit" } : { display: "none" }}></div> */}
             {showtimeResults ?
                 <ul className='cinemas-showing-film'>
                     {showtimeResults.map((cinema) => (

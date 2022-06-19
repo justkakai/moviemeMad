@@ -32,28 +32,32 @@ function SearchResults() {
     }
 
     return (
-        <ul className='search-results-ul'>
+        <section className='search-results-section'>
+            {/* <div className='loader'></div> */}
             {results ?
-                results.map((movie, index) => (
-                    <li key={index} className="search-results-movie" onClick={() => handleClick(movie.imdbID, movie.Title)}>
-                        <div className='movie-container'>
-                            <div className='image-container'><img onError={(e) => e.target.src = blackBg} alt={movie.Title} src={movie.Poster} /></div>
-                            <p className='movie-title'>{movie.Title}</p>
-                            <div className='movie-extra-info'>
-                                <p className='result-type'>{movie.Type}!</p>
-                                <p className='movie-release-year'>{movie.Year}</p>
+                <ul className='search-results-ul'>
+                    {results.map((movie, index) => (
+                        <li key={index} className="search-results-movie" onClick={() => handleClick(movie.imdbID, movie.Title)}>
+                            <div className='movie-container'>
+                                <div key={movie.imdbID} className='image-container'><img onError={(e) => e.target.src = blackBg} alt={movie.Title} src={movie.Poster} /></div>
+                                <p key={movie.Title} className='movie-title'>{movie.Title}</p>
+                                <div key={movie.Year} className='movie-extra-info'>
+                                    <p className='result-type'>{movie.Type}!</p>
+                                    <p className='movie-release-year'>{movie.Year}</p>
+                                </div>
                             </div>
-                        </div>
-                    </li>
-                ))
+                        </li>
+                    ))}
+                </ul>
                 :
                 <div className='no-matching-results'>
                     <p>We don't seem to have any matching results in our database</p>
                     <img onError={(e) => e.target.src = blackBg} alt="No movies found" src={sadFace} />
                 </div>
             }
-        </ul>
+        </section>
     )
 }
 
 export default SearchResults;
+
