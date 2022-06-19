@@ -2,7 +2,7 @@ import axios from 'axios';
 import xImage from '../assets/images/x-image-3.png';
 import blackBg from "../assets/images/black-background.png";
 import { HiOutlinePlus } from "react-icons/hi";
-import { useEffect, useContext } from 'react';
+import { useEffect, useContext, useRef } from 'react';
 import { ModalActiveContext } from '../contexts/ModalActiveContext';
 import { MovieTitleContext } from '../contexts/MovieTitleContext';
 import { ImdbIdContext } from '../contexts/ImdbIdContext';
@@ -12,6 +12,8 @@ import '../styles/MovieDetails.css';
 
 function MovieDetails() {
 
+    const scrollRef = useRef();
+
     const { modalActive, setModalActive } = useContext(ModalActiveContext);
     const { movieTitle } = useContext(MovieTitleContext);
     const { imdbId, setImdbId } = useContext(ImdbIdContext);
@@ -19,6 +21,7 @@ function MovieDetails() {
     const { showtimeResults, setShowtimeResults } = useContext(ShowtimesContext);
 
     useEffect(() => {
+        scrollRef.current.scrollTo(0, 0);
         axios.get(`/api/movieDetails/${movieTitle}`)
             .then(movie => {
                 console.log("movieTitle - filmId", movie.data.films[0].film_id);
@@ -43,7 +46,7 @@ function MovieDetails() {
 
     return (
         <section
-            className='movie-details-container' style={modalActive ? { transition: "height 1s" } : { height: "0", padding: "0", opacity: "0" }}>
+            className='movie-details-container' style={modalActive ? { transition: "height 1s" } : { height: "0", padding: "0", opacity: "0" }} ref={scrollRef}>
 
             <button
                 className='x-button'
@@ -52,10 +55,9 @@ function MovieDetails() {
             </button>
 
             <h2>{movieTitle}</h2>
-
             <div className='movie-details'>
                 <div className='movie-details-left'>
-                    <img src={movieDetails.Poster} alt={`Poster for the movie ${movieDetails.Title}`} onError={(e) => e.target.src=blackBg} />
+                    <img src={movieDetails.Poster} alt={`Poster for the movie ${movieDetails.Title}`} onError={(e) => e.target.src = blackBg} />
                 </div>
                 <div className='movie-details-right'>
                     <p>Release Year: {movieDetails.Year}</p>
@@ -71,7 +73,6 @@ function MovieDetails() {
             </div>
 
             <h3>Screenings in Berlin</h3>
-
             {showtimeResults ?
                 <ul className='cinemas-showing-film'>
                     {showtimeResults.map((cinema) => (
