@@ -5,6 +5,7 @@
 }
 
 .movie-container {
+    position: relative;
     width: 20rem;
     height: 28rem;
     display: flex;
@@ -45,11 +46,15 @@
 }
 
 .movie-extra-info {
+    position: absolute;
     margin-top: auto;
+    bottom: 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    align-self: flex-end;
+    /* z-index: 2; */
 }
 
 .result-type {
@@ -63,4 +68,17 @@
     width: 20%;
     background-color: rgb(0, 0, 0);
     color: var(--release-year-text-color);
+}
+
+.no-matching-results {
+    margin-top: 3rem;
+}
+
+.no-matching-results p {
+    font-size: 1.5em;
+    margin-bottom: 2rem;
+}
+
+.no-matching-results img {
+    height: 30em;
 }
