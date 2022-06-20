@@ -64,11 +64,11 @@ function MovieDetails() {
                     <img src={movieDetails.Poster} alt={`Poster for the movie ${movieDetails.Title}`} onError={(e) => e.target.src = blackBg} />
                 </div>
                 <div className='movie-details-right'>
-                    <p>Runtime: {movieDetails.Runtime}</p>
-                    <p>Director: {movieDetails.Director}</p>
-                    <p>Starring: {movieDetails.Actors}</p>
-                    <p>Genre: {movieDetails.Genre}</p>
-                    <p>Rating: {movieDetails.Rated}</p>
+                    <p><span className='details-headings'>Runtime:</span> {movieDetails.Runtime}</p>
+                    <p><span className='details-headings'>Director:</span> {movieDetails.Director}</p>
+                    <p><span className='details-headings'>Starring:</span> {movieDetails.Actors}</p>
+                    <p><span className='details-headings'>Genre:</span> {movieDetails.Genre}</p>
+                    <p><span className='details-headings'>Rating:</span> {movieDetails.Rated}</p>
                     <p>{movieDetails.Plot}</p>
                     <div className='trailer-and-watchlist'>
                         <a href="#/">Watch Trailer</a>

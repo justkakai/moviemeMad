@@ -2,6 +2,7 @@
   position: relative;
   text-align: center;
   padding: 5rem 8rem 2rem 8rem;
+ /*  background-image: url('./assets/images/overlay.png'); */
 }
 
 .App li {
@@ -14,8 +15,9 @@
 
 h1 {
   font-family: var(--main-font);
-  font-size: 3.5em;
+  font-size: 4.5em;
   margin: 0 auto 2rem auto;
+  color: var(--h1-text-color);
 }
 
 .search-results-ul,
@@ -38,7 +40,8 @@ h1 {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(90deg, var(--scrollbar-primary-color) 1%, var(--scrollbar-secondary-color) 100%);
+  /* background: linear-gradient(90deg, var(--scrollbar-primary-color) 1%, var(--scrollbar-secondary-color) 100%); */
+  background: var(--scrollbar-secondary-color);
 }
 
 /******************SPINNER CSS*******************/
