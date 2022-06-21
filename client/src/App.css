@@ -2,7 +2,7 @@
   position: relative;
   text-align: center;
   padding: 5rem 8rem 2rem 8rem;
- /*  background-image: url('./assets/images/overlay.png'); */
+  /*  background-image: url('./assets/images/overlay.png'); */
 }
 
 .App li {
@@ -37,30 +37,31 @@ h1 {
 
 ::-webkit-scrollbar-track {
   background: var(--scrollbar-primary-color);
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb {
   /* background: linear-gradient(90deg, var(--scrollbar-primary-color) 1%, var(--scrollbar-secondary-color) 100%); */
   background: var(--scrollbar-secondary-color);
+  /* border-radius: 3px; */
 }
 
 /******************SPINNER CSS*******************/
 
-.loader {
-  font-size: 10px;
+.loader,
+.loader-screenings {
   margin: 50px auto;
   text-indent: -9999em;
   width: 11em;
   height: 11em;
-  border: 2px solid var(--body-bg-color);
   border-radius: 50%;
   background: var(--spinner-primary-color);
-  background: -moz-linear-gradient(left, var(--spinner-primary-color) 10%, var(--spinner-secondary-color) 42%);
+  /* background: -moz-linear-gradient(left, var(--spinner-primary-color) 10%, var(--spinner-secondary-color) 42%);
   background: -webkit-linear-gradient(left, var(--spinner-primary-color) 10%, var(--spinner-secondary-color) 42%);
   background: -o-linear-gradient(left, var(--spinner-primary-color) 10%, var(--spinner-secondary-color) 42%);
   background: -ms-linear-gradient(left, var(--spinner-primary-color) 10%, var(--spinner-secondary-color) 42%);
   background: linear-gradient(to right, var(--spinner-primary-color) 10%, var(--spinner-secondary-color) 42%);
-  position: relative;
+  position: relative; */
   -webkit-animation: load3 1.4s infinite linear;
   animation: load3 1.4s infinite linear;
   -webkit-transform: translateZ(0);
@@ -68,7 +69,18 @@ h1 {
   transform: translateZ(0);
 }
 
-.loader:before {
+.loader {
+  border: 2px solid var(--body-bg-color);
+  font-size: 10px;
+}
+
+.loader-screenings {
+  border: 2px solid white;
+  font-size: 5px;
+}
+
+.loader::before,
+.loader-screenings::before {
   width: 50%;
   height: 50%;
   background: var(--spinner-primary-color);
@@ -79,7 +91,8 @@ h1 {
   content: '';
 }
 
-.loader:after {
+.loader::after,
+.loader-screenings::after {
   background: var(--body-bg-color);
   width: 75%;
   /* height: 75%; */
