@@ -22,7 +22,6 @@ function MovieDetails() {
 
     const [isLoadingScreenings, setIsLoadingScreenings] = useState(false);
 
-
     let dayOfMonth = Date().split(" ")[2];
     let monthOfYear = (new Date().getMonth()) + 1;
 

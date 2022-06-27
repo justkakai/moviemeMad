@@ -8,6 +8,7 @@ h2 {
     font-size: 2.5rem;
     align-self: flex-start;
     text-align: left;
+    /* width: 95%; */
 }
 
 h3 {
@@ -31,7 +32,8 @@ h4 {
     margin-left: -100px;
     margin-top: -100px;
     /* top: 38%; */
-    top: 380px;
+    /* top: 380px; */
+    top: 430px;
     left: 30%;
     height: 65%;
     width: 50%;
@@ -94,6 +96,7 @@ h4 {
 }
 
 .movie-details-right p {
+    font-family: var(--main-font);
     color: var(--movie-details-right-p-color);
     text-align: left;
     line-height: 1.6rem;
@@ -116,6 +119,7 @@ h4 {
 
 .trailer-and-watchlist a,
 .trailer-and-watchlist button {
+    font-family: var(--main-font);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -132,7 +136,7 @@ h4 {
 }
 
 .trailer-and-watchlist button {
-    font-family: var(--main-font);
+    /* font-family: var(--main-font); */
     border: none;
     background-color: var(--movie-details-right-button-bg-color);
     color: var(--movie-details-right-button-text-color);
@@ -179,6 +183,8 @@ h4 {
 
 /**************************** MEDIA QUERIES ****************************/
 
+/* WIDTH */
+
 @media (max-width: 1515px) {
 
     .trailer-and-watchlist a,
@@ -188,7 +194,7 @@ h4 {
 
     .movie-details-container {
         margin: 0 auto;
-        top: 250px;
+        top: 340px;
         left: 50%;
         transform: translateX(-50%);
         padding: 0 2rem;
@@ -217,5 +223,37 @@ h4 {
     h2 {
         align-self: center;
         text-align: center;
+    }
+}
+
+@media (max-width: 1298px) {
+    .movie-details-container {
+        width: 85%;
+    }
+}
+
+/* HEIGHT */
+
+@media (max-height: 1000px) {
+    .movie-details-container {
+        height: 60%;
+    }
+}
+
+@media (max-height: 851px) {
+    .movie-details-container {
+        height: 50%;
+    }
+}
+
+@media (max-height: 680px) {
+    .movie-details-container {
+        height: 45%;
+    }
+}
+
+@media (max-height: 653px) {
+    .movie-details-container {
+        height: 42%;
     }
 }

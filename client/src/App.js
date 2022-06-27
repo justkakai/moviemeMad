@@ -10,6 +10,7 @@ import { ShowtimesProvider } from './contexts/ShowtimesContext';
 import { MovieDetailsProvider } from './contexts/MovieDetailsContext';
 import { IsLoadingProvider } from './contexts/IsLoadingContext';
 import './App.css';
+import Header from './components/Header';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
                 <IsLoadingProvider>
                   <SearchWordProvider>
                     <main className="App">
+                      <Header />
                       <h1>movieme<em>Mad!</em></h1>
                       <SearchSection />
                       <SearchResults />

@@ -1,12 +1,8 @@
 :root {
   /* general colors */
   --black: rgb(0, 0, 0);
-  /* --body-bg-color: rgb(225, 195, 228); */
-  /* --body-bg-color: rgb(223, 192, 190); */
   --body-bg-color: rgb(169, 102, 255);
-  /* --scrollbar-primary-color: var(--black); */
   --scrollbar-primary-color: var(--black);
-  /* --scrollbar-secondary-color: var(--body-bg-color); */
   --scrollbar-secondary-color: rgb(230, 230, 230);
   --spinner-primary-color: rgb(255, 255, 255);
   --spinner-secondary-color: rgba(255, 255, 255, 0);
@@ -18,14 +14,11 @@
 
   /* search results section colors */
   --movie-container-bg-color: rgb(32, 32, 32);
-  /* --movie-container-box-shadow-color: rgb(245, 245, 245); */
   --movie-container-box-shadow-color: rgb(245, 245, 245);
   --movie-title-text-color: rgb(255, 255, 255);
   --result-type-text-color: rgb(255, 255, 255);
   --release-year-text-color: rgb(245, 222, 179);
-  /* --release-year-text-color: black; */
   --release-year-bg-color: var(--black);
-  /* --release-year-bg-color: rgb(245, 245, 245); */
 
   /* movie details section colors */
   --h2-text-color: rgb(245, 245, 245);
@@ -33,24 +26,22 @@
   --movie-details-container-bg-color: rgb(24, 24, 24);
   --movie-details-left-border-color: rgb(218, 218, 218);
   --movie-details-right-bg-color: none;
-  --movie-details-right-p-color: rgb(245, 245, 245);
+  --movie-details-right-p-color: rgb(255, 255, 255);
   --movie-details-right-a-text-color: var(--black);
-  /* --movie-details-right-a-bg-color: rgb(255, 251, 1); */
   --movie-details-right-a-bg-color: rgb(245, 197, 24);
-  /* --movie-details-right-button-bg-color: rgb(173, 173, 173); */
-  /* --movie-details-right-button-bg-color: rgb(245, 176, 24); */
   --movie-details-right-button-bg-color: rgb(230, 230, 230);
   --movie-details-right-button-text-color: rgb(0, 0, 0);
   --movie-details-right-button-border-color: rgb(221, 221, 221);
   --movie-details-border-bottom-color: rgb(92, 92, 92);
   --x-button-border-color: rgb(49, 49, 49);
-  --x-button-bg-color: rgb(230, 230, 230);
+  --x-button-bg-color: rgba(230, 230, 230, 0.9);
   --showtimes-button-bg-color: rgb(223, 223, 223);
   --showtimes-button-text-color: rgb(22, 22, 22);
   --no-screenings-text-color: rgb(255, 255, 255);
 
   /* fonts */
   --main-font: "PP-Editorial-New-Regular", sans-serif;
+  --secondary-font: "PolySans", sans-serif;
 }
 
 * {
@@ -73,6 +64,10 @@ body {
 
 @font-face {
   font-family: "PP-Editorial-New-Regular";
-  /* src: url("./fonts/PPNeueMontreal-Book.otf"); */
   src: url("./assets/fonts/PPEditorialNew-Regular.otf");
 }
+
+/* @font-face {
+  font-family: "PolySans";
+  src: url("./assets/fonts/PPNeueMontreal-Book.otf");
+} */
