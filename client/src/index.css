@@ -8,6 +8,11 @@
   --spinner-secondary-color: rgba(255, 255, 255, 0);
   --h1-text-color: rgb(41, 41, 41);
 
+  /* header colors */
+  --right-header-text-color: rgb(29, 29, 29);
+  --watchlist-number-text-color: rgb(66, 66, 66);
+  --watchlist-number-bg-color: rgb(245, 197, 24);
+
   /* search section colors */
   --search-button-bg-color: rgb(32, 32, 32);
   --search-button-text-color: rgb(255, 255, 255);
