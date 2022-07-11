@@ -5,6 +5,9 @@
     "jwt_secret":{
         "access":"b930d5fd03871d4c2e9cc837f5511c4dfc58a3092b5cae9c6aca1ae4237354e06c482f93b502bbff1f94e47ff56114716c008ba97099b6895691744508ae6471"
     },
+    "OMDb": {
+        "api-key": "7d212626"
+    },
     "db":{
         "uri":"mongodb+srv://justkakai:Elwapz25!@cluster0.sfnayiw.mongodb.net/watchlist?retryWrites=true&w=majority"
     },

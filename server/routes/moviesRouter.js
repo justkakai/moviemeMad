@@ -7,7 +7,7 @@ const router = express.Router();
 /**
  * @method GET
  * @route /getMovies/:searchTerm
- * @desc getting all movies with specified term in their title
+ * @desc getting all movies with specified term in their title from the OMDb API
  * @access Public
  */
 
@@ -17,7 +17,7 @@ router.get("/getMovies/:searchTerm", getBySearchTerm);
 /**
  * @method GET
  * @route /getById/:id
- * @desc getting movie with specified ID
+ * @desc getting movie with specified ID from the OMDb API
  * @access Public
  */
 
@@ -37,7 +37,7 @@ router.get("/movieDetails/:title", getMovieDetails);
 /**
  * @method GET
  * @route /movieShowtimes?:filmId?:date
- * @desc getting all movie showtimes for movie specified by ID and date
+ * @desc getting all movie showtimes for movie specified by ID and date from the MovieGlu API
  * @access Public
  */
 

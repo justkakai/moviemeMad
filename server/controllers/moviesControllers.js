@@ -2,14 +2,15 @@ const axios = require('axios');
 const config = require('config');
 
 const headers = { headers: config.get('headers') };
+const apiKey = config.get('OMDb.api-key');
 
 const getBySearchTerm = (req, res) => {
-    axios.get(`https://www.omdbapi.com/?apikey=7d212626&s=${req.params.searchTerm}`)
+    axios.get(`https://www.omdbapi.com/?apikey=${apiKey}&s=${req.params.searchTerm}`)
         .then(movies => res.json(movies.data))
 }
 
 const getById = (req, res) => {
-    axios.get(`https://www.omdbapi.com/?apikey=7d212626&i=${req.params.id}`)
+    axios.get(`https://www.omdbapi.com/?apikey=${apiKey}&i=${req.params.id}`)
         .then(movie => res.json(movie.data))
 }
 
