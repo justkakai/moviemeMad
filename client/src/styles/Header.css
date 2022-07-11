@@ -29,12 +29,13 @@
 
 .watchlist, .login {
     color: var(--h1-text-color);
+    font-size: 1.12em;
 }
 
 .watchlist {
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     gap: 0.4em;
 }
 

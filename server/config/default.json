@@ -1,0 +1,20 @@
+{
+    "app":{
+        "port": 5006
+    },
+    "jwt_secret":{
+        "access":"b930d5fd03871d4c2e9cc837f5511c4dfc58a3092b5cae9c6aca1ae4237354e06c482f93b502bbff1f94e47ff56114716c008ba97099b6895691744508ae6471"
+    },
+    "db":{
+        "uri":"mongodb+srv://justkakai:Elwapz25!@cluster0.sfnayiw.mongodb.net/watchlist?retryWrites=true&w=majority"
+    },
+    "headers": {
+        "client": "STUD_224",
+        "x-api-key": "l2J1IJzLlZ8aW2sXZuNqEg0T2BzLRyO3ESdH8t1b",
+        "authorization": "Basic U1RVRF8yMjRfWFg6emRpRUs1aTJHeTBB",
+        "territory": "XX",
+        "api-version": "v200",
+        "geolocation": "-22.0;14.0",
+        "device-datetime": "2022-07-11T18:06:27.435Z"
+    }
+}
