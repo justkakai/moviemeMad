@@ -10,7 +10,7 @@ const generateToken = (user) => {
     return jwt.sign(
         user,
         config.get('jwt_secret.access'),
-        { expiresIn: '300s' }
+        { expiresIn: '3600s' }
     );
 }
 

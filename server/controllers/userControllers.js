@@ -15,8 +15,8 @@ const register = async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, salt);
 
     const user = await User.create({
-        name, 
-        email, 
+        name,
+        email,
         password: hashedPassword,
         createdAt: new Date()
     })
@@ -28,11 +28,11 @@ const register = async (req, res) => {
 
     const token = generateToken(payload);
 
-    res.json({token: token});
+    res.json({ token: token });
 }
 
 const login = async (req, res) => {
-    const {email, password} = req.body;
+    const { email, password } = req.body;
 
     const user = await User.findByEmail(email);
 

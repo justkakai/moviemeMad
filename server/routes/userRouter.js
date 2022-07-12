@@ -16,9 +16,10 @@ const router = express.Router();
  */
 
 router.get('/all', authenticateToken, async (req, res) => {
-    const { email } = req.body;
-    const userResult = await User.find({ email: email });
-    res.status(200).json(userResult);
+    // const { email } = req.body;
+    // const userResult = await User.find({ email: email });
+    const allUsers = await User.find();
+    res.status(200).json(allUsers);
 });
 
 
@@ -29,7 +30,7 @@ router.get('/all', authenticateToken, async (req, res) => {
 router.post('/register',
     check('name', 'Name is required').notEmpty(),
     check('email', 'Please include a valid email').isEmail(),
-    check('password', 'Please enter a password with 6 or more characters').isLength({ min: 6 }), 
+    check('password', 'Please enter a password with 6 or more characters').isLength({ min: 6 }),
     register
 );
 

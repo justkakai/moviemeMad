@@ -26,7 +26,7 @@ app.use('/api', moviesRouter);
 
 app.use('/user', userRouter);
 
-const PORT = config.get('app.port') || 5007;
+const PORT = config.get('app.server_port') || 6000;
 
 app.listen(PORT, () => {
     console.log(`Start...Server is running successfully on port ${PORT}`);
