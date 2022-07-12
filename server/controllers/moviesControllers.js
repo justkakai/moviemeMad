@@ -5,22 +5,27 @@ const headers = { headers: config.get('headers') };
 const apiKey = config.get('OMDb.api-key');
 
 const getBySearchTerm = (req, res) => {
-    axios.get(`https://www.omdbapi.com/?apikey=${apiKey}&s=${req.params.searchTerm}`)
+    const { searchTerm } = req.params;
+    axios.get(`https://www.omdbapi.com/?apikey=${apiKey}&s=${searchTerm}`)
         .then(movies => res.json(movies.data))
 }
 
 const getById = (req, res) => {
-    axios.get(`https://www.omdbapi.com/?apikey=${apiKey}&i=${req.params.id}`)
+    const { id } = req.params;
+    axios.get(`https://www.omdbapi.com/?apikey=${apiKey}&i=${id}`)
         .then(movie => res.json(movie.data))
 }
 
 const getMovieDetails = (req, res) => {
-    axios.get(`https://api-gate2.movieglu.com/filmLiveSearch/?query=${req.params.title}`, headers)
+    const { title } = req.params;
+    axios.get(`https://api-gate2.movieglu.com/filmLiveSearch/?query=${title}`, headers)
         .then(movie => res.json(movie.data))
 }
 
 const getShowtimes = (req, res) => {
-    axios.get(`https://api-gate2.movieglu.com/filmShowTimes/?film_id=${req.query.filmId}&date=${req.query.date}`, headers)
+    const { filmId } = req.query;
+    const { date } = req.query;
+    axios.get(`https://api-gate2.movieglu.com/filmShowTimes/?film_id=${filmId}&date=${date}`, headers)
         .then(movie => res.json(movie.data))
 }
 
